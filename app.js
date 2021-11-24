@@ -1,15 +1,6 @@
-//var net = require("net");
 var repl = require("repl");
 const { evaluateCommand } = require("./modules/command");
 const { dbInit } = require("./modules/db");
-
-//A remote node repl that you can telnet to!
-// net.createServer(function (socket) {
-//     var remote = repl.start("abhinavs::repl> ", socket);
-//     //Adding "mood" and "bonus" to the remote REPL's context.
-//     remote.context.mood = mood;
-//     remote.context.bonus = "UNLOCKED";
-// }).listen(5001);
 
 const evaluateInput = (userInput, context, filename, callback) => {
     let response = evaluateCommand(userInput, context);
